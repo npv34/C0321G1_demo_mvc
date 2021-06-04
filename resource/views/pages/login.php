@@ -1,4 +1,3 @@
-
 <!------ Include the above in your HEAD tag ---------->
 <?php
 
@@ -8,8 +7,10 @@ require_once "../../../vendor/autoload.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     session_start();
-    $authController  = new AuthController();
-    $authController->login();
+    $authController = new AuthController();
+    if (!$authController->login()) {
+        $error = 'Tai khoan mat khau khong dung';
+    }
 }
 
 
@@ -19,9 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
     <title>My Awesome Login Page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <style>
         /* Coded with love by Mutiullah Samim */
         body,
@@ -31,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             height: 100%;
             background: #60a3bc !important;
         }
+
         .user_card {
             height: 400px;
             width: 350px;
@@ -48,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border-radius: 5px;
 
         }
+
         .brand_logo_container {
             position: absolute;
             height: 170px;
@@ -58,39 +63,47 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             padding: 10px;
             text-align: center;
         }
+
         .brand_logo {
             height: 150px;
             width: 150px;
             border-radius: 50%;
             border: 2px solid white;
         }
+
         .form_container {
             margin-top: 100px;
         }
+
         .login_btn {
             width: 100%;
             background: #c0392b !important;
             color: white !important;
         }
+
         .login_btn:focus {
             box-shadow: none !important;
             outline: 0px !important;
         }
+
         .login_container {
             padding: 0 2rem;
         }
+
         .input-group-text {
             background: #c0392b !important;
             color: white !important;
             border: 0 !important;
             border-radius: 0.25rem 0 0 0.25rem !important;
         }
+
         .input_user,
         .input_pass:focus {
             box-shadow: none !important;
             outline: 0px !important;
         }
-        .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+
+        .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
             background-color: #c0392b !important;
         }
     </style>
@@ -102,12 +115,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="user_card">
             <div class="d-flex justify-content-center">
                 <div class="brand_logo_container">
-                    <img src="https://cdn.freebiesupply.com/logos/large/2x/pinterest-circle-logo-png-transparent.png" class="brand_logo" alt="Logo">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/pinterest-circle-logo-png-transparent.png"
+                         class="brand_logo" alt="Logo">
                 </div>
+
             </div>
+
             <div class="d-flex justify-content-center form_container">
+
                 <form method="post">
+
+                    <div class="input-group mt-3">
+                        <?php if (isset($error)) : ?>
+                            <div class="alert alert-danger">
+                                <?php echo $error ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
                     <div class="input-group mb-3">
+
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
@@ -117,7 +143,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" name="password" class="form-control input_pass" value="" placeholder="password">
+                        <input type="password" name="password" class="form-control input_pass" value=""
+                               placeholder="password">
                     </div>
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">

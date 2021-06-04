@@ -16,8 +16,9 @@ class AuthController
         $this->authService = new AuthService();
     }
 
-    public function login() {
-        $this->authService->checkUserByEmailPassword($_REQUEST);
+    public function login(): bool
+    {
+        return $this->authService->checkUserByEmailPassword($_REQUEST);
     }
 
     public function logout() {

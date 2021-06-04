@@ -15,12 +15,14 @@ class AuthService
         $this->userModel = new UserModel();
     }
 
-    function checkUserByEmailPassword($request) {
+    function checkUserByEmailPassword($request): bool
+    {
         $user = $this->userModel->findByEmailPassword($request);
         if ($user) {
             $_SESSION['userLogin'] = $user;
             header('location: ../../../index.php');
         }
+        return false;
     }
 
     function logout() {
