@@ -1,13 +1,14 @@
 <?php
 
+use App\Controller\AuthController;
 use App\Controller\UserController;
 
 $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : null;
 $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : null;
-$userController  = new  UserController();
-switch ($page){
+$userController = new UserController();
+switch ($page) {
     case 'users':
-        switch ($action){
+        switch ($action) {
             case "show-list":
                 $userController->index();
                 break;
@@ -18,6 +19,10 @@ switch ($page){
             case "add":
                 break;
         }
+        break;
+    case 'logout':
+        $authController = new AuthController();
+        $authController->logout();
         break;
 
 }

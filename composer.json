@@ -14,7 +14,8 @@
       "App\\Controller\\": "app/controllers",
       "App\\Model\\": "app/models",
       "App\\Service\\": "app/services",
-      "App\\": "app"
+      "App\\": "app",
+      "App\\Midd\\": "app/Midd"
     }
   },
   "require": {

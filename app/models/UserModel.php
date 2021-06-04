@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use PDO;
+
 class UserModel extends Model implements BaseInterface
 {
     function getAll()
@@ -16,5 +18,14 @@ class UserModel extends Model implements BaseInterface
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(1, $id);
         return $stmt->execute();
+    }
+
+    function findByEmailPassword($request) {
+        $sql = 'SELECT `id`, `name`, `email`, `image`, `address`, `group_id` FROM users WHERE email = ? AND password = ?';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(1, $request['email']);
+        $stmt->bindParam(2, $request['password']);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }

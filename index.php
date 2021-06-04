@@ -1,3 +1,15 @@
+<?php
+
+use App\Midd\Auth;
+
+session_start();
+require_once "vendor/autoload.php";
+
+$auth = new Auth();
+$auth->isLogin();
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,15 +25,8 @@
 <body>
 <div class="container">
     <?php
-    use App\Controller\UserController;
-    require_once "vendor/autoload.php";
-
     include_once "resource/views/core/navbar.php";
-
-    ?>
-
-    <?php
-      include_once "router.php";
+    include_once "router.php";
     ?>
 </div>
 <!-- Optional JavaScript -->
