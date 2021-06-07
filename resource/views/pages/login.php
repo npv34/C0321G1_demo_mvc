@@ -17,160 +17,115 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>My Awesome Login Page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    <style>
-        /* Coded with love by Mutiullah Samim */
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background: #60a3bc !important;
-        }
 
-        .user_card {
-            height: 400px;
-            width: 350px;
-            margin-top: auto;
-            margin-bottom: auto;
-            background: #f39c12;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            padding: 10px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-radius: 5px;
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        }
+    <title>Login</title>
 
-        .brand_logo_container {
-            position: absolute;
-            height: 170px;
-            width: 170px;
-            top: -75px;
-            border-radius: 50%;
-            background: #60a3bc;
-            padding: 10px;
-            text-align: center;
-        }
+    <!-- Custom fonts for this template-->
+    <link href="../../../public/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
 
-        .brand_logo {
-            height: 150px;
-            width: 150px;
-            border-radius: 50%;
-            border: 2px solid white;
-        }
+    <!-- Custom styles for this template-->
+    <link href="../../../public/css/sb-admin-2.min.css" rel="stylesheet">
 
-        .form_container {
-            margin-top: 100px;
-        }
-
-        .login_btn {
-            width: 100%;
-            background: #c0392b !important;
-            color: white !important;
-        }
-
-        .login_btn:focus {
-            box-shadow: none !important;
-            outline: 0px !important;
-        }
-
-        .login_container {
-            padding: 0 2rem;
-        }
-
-        .input-group-text {
-            background: #c0392b !important;
-            color: white !important;
-            border: 0 !important;
-            border-radius: 0.25rem 0 0 0.25rem !important;
-        }
-
-        .input_user,
-        .input_pass:focus {
-            box-shadow: none !important;
-            outline: 0px !important;
-        }
-
-        .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-            background-color: #c0392b !important;
-        }
-    </style>
 </head>
-<!--Coded with love by Mutiullah Samim-->
-<body>
-<div class="container h-100">
-    <div class="d-flex justify-content-center h-100">
-        <div class="user_card">
-            <div class="d-flex justify-content-center">
-                <div class="brand_logo_container">
-                    <img src="https://cdn.freebiesupply.com/logos/large/2x/pinterest-circle-logo-png-transparent.png"
-                         class="brand_logo" alt="Logo">
-                </div>
 
-            </div>
+<body class="bg-gradient-primary">
 
-            <div class="d-flex justify-content-center form_container">
+<div class="container">
 
-                <form method="post">
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
 
-                    <div class="input-group mt-3">
-                        <?php if (isset($error)) : ?>
-                            <div class="alert alert-danger">
-                                <?php echo $error ?>
+        <div class="col-xl-10 col-lg-12 col-md-9">
+
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Login!</h1>
+                                </div>
+                                <?php
+                                if (isset($error)) :?>
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <?php echo $error ?>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+                                <?php endif; ?>
+                                <form class="user" method="post">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control form-control-user"
+                                               id="exampleInputEmail" name="email" aria-describedby="emailHelp"
+                                               placeholder="Enter Email Address...">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control form-control-user"
+                                               id="exampleInputPassword" name="password" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox small">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck">
+                                            <label class="custom-control-label" for="customCheck">Remember
+                                                Me</label>
+                                        </div>
+                                    </div>
+                                    <button  type="submit" class="btn btn-primary btn-user btn-block">
+                                        Login
+                                    </button>
+                                    <hr>
+                                    <a href="index.html" class="btn btn-google btn-user btn-block">
+                                        <i class="fab fa-google fa-fw"></i> Login with Google
+                                    </a>
+                                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                        <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                                    </a>
+                                </form>
+                                <hr>
+                                <div class="text-center">
+                                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                </div>
+                                <div class="text-center">
+                                    <a class="small" href="register.html">Create an Account!</a>
+                                </div>
                             </div>
-                        <?php endif; ?>
-                    </div>
-                    <div class="input-group mb-3">
-
-                        <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
-                        </div>
-                        <input type="text" name="email" class="form-control input_user" value="" placeholder="Email">
-                    </div>
-                    <div class="input-group mb-2">
-                        <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-key"></i></span>
-                        </div>
-                        <input type="password" name="password" class="form-control input_pass" value=""
-                               placeholder="password">
-                    </div>
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customControlInline">
-                            <label class="custom-control-label" for="customControlInline">Remember me</label>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-center mt-3 login_container">
-                        <button type="submit" class="btn login_btn">Login</button>
-                    </div>
-                </form>
-            </div>
-
-            <div class="mt-4">
-                <div class="d-flex justify-content-center links">
-                    Don't have an account? <a href="#" class="ml-2">Sign Up</a>
-                </div>
-                <div class="d-flex justify-content-center links">
-                    <a href="#">Forgot your password?</a>
                 </div>
             </div>
+
         </div>
+
     </div>
+
 </div>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Bootstrap core JavaScript-->
+<script src="../../../public/js/jquery.min.js"></script>
+<script src="../../../public/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="../../../public/js/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="../../../public/js/sb-admin-2.min.js"></script>
+
 </body>
+
 </html>

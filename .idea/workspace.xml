@@ -2,9 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76fda855-7247-45f4-ae08-9e9c3e9672a8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/AuthService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/AuthService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/all.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/dataTables.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/sb-admin-2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/dataTables.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/datatables-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/jquery.easing.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/sb-admin-2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/views/core/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/views/core/sidebar.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/views/pages/dashboard.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/views/pages/register.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/views/users/add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/UserService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource/views/core/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/resource/views/core/topbar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource/views/pages/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/resource/views/pages/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource/views/users/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/resource/views/users/list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/router.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,11 +62,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/js" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/js" />
+      <recent name="$PROJECT_DIR$/public/css" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -56,7 +83,8 @@
       <option name="presentableId" value="Default" />
       <updated>1622596922870</updated>
       <workItem from="1622596924004" duration="4078000" />
-      <workItem from="1622769386275" duration="4212000" />
+      <workItem from="1622769386275" duration="4565000" />
+      <workItem from="1623028404642" duration="3738000" />
     </task>
     <servers />
   </component>

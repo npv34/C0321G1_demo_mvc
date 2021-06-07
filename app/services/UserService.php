@@ -30,4 +30,13 @@ class UserService implements ServiceInterface
     function deleteById($id) {
         $this->userModel->destroy($id);
     }
+
+    function add() {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            include_once "resource/views/users/add.php";
+        } else {
+            // code chuc nang them moi voi method post
+
+        }
+    }
 }

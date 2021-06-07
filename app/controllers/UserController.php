@@ -5,7 +5,7 @@ use App\Service\UserService;
 
 class UserController
 {
-    protected $userService;
+    protected UserService $userService;
 
     public function __construct()
     {
@@ -21,5 +21,9 @@ class UserController
     function delete($id) {
         $this->userService->deleteById($id);
         header('location: index.php?page=users&action=show-list');
+    }
+
+    function add() {
+        $this->userService->add();
     }
 }
